@@ -110,6 +110,7 @@ func LogInputData(cc oauth2.ClientConfig) {
 		{"Scopes", strings.Join(cc.Scopes, ", ")},
 		{"ACR Values", strings.Join(cc.ACRValues, ", ")},
 		{"Audience", strings.Join(cc.Audience, ", ")},
+		{"Resource", strings.Join(cc.Resource, ", ")},
 		{"Response types", strings.Join(cc.ResponseType, ", ")},
 		{"Response mode", cc.ResponseMode},
 		{"PKCE", strconv.FormatBool(cc.PKCE)},

@@ -57,6 +57,10 @@ func (r *Request) AuthorizeRequest(
 		r.Form.Set("audience", strings.Join(cconfig.Audience, " "))
 	}
 
+	if len(cconfig.Resource) > 0 {
+		r.Form.Set("resource", strings.Join(cconfig.Resource, " "))
+	}
+
 	if len(cconfig.Purpose) > 0 {
 		r.Form.Set("purpose", cconfig.Purpose)
 	}
@@ -147,6 +151,10 @@ func (r *Request) AuthorizeRequest(
 
 		if len(cconfig.Audience) > 0 {
 			r.Form.Set("audience", strings.Join(cconfig.Audience, " "))
+		}
+
+		if len(cconfig.Resource) > 0 {
+			r.Form.Set("resource", strings.Join(cconfig.Resource, " "))
 		}
 
 		if len(cconfig.Purpose) > 0 {

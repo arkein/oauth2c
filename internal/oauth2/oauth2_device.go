@@ -42,6 +42,10 @@ func RequestDeviceAuthorization(ctx context.Context, cconfig ClientConfig, sconf
 		request.Form.Set("audience", strings.Join(cconfig.Audience, " "))
 	}
 
+	if len(cconfig.Resource) > 0 {
+		request.Form.Set("resource", strings.Join(cconfig.Resource, " "))
+	}
+
 	if req, err = http.NewRequestWithContext(
 		ctx,
 		http.MethodPost,

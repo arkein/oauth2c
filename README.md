@@ -87,7 +87,7 @@ The available flags are:
       --actor-token string                                  acting party token
       --actor-token-type string                             acting party token type
       --assertion string                                    claims for jwt bearer assertion
-      --audience strings                                    requested audience
+      --audience strings                                    requested audience, see also '--resource'
       --auth-method string                                  token endpoint authentication method
       --authentication-code string                          authentication code used for passwordless authentication
       --authorization-endpoint string                       server's authorization endpoint
@@ -123,6 +123,7 @@ The available flags are:
       --redirect-url string                                 client redirect url (default "http://localhost:9876/callback")
       --refresh-token string                                refresh token
       --request-object                                      pass request parameters as jwt
+      --resource strings                                    requested resource, see also '--audience'
       --response-mode string                                response mode
       --response-types strings                              response type
       --scopes strings                                      requested scopes

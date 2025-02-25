@@ -60,6 +60,7 @@ type ClientConfig struct {
 	Scopes                 []string
 	ACRValues              []string
 	Audience               []string
+	Resource               []string
 	AuthMethod             string `validate:"omitempty,oneof=client_secret_basic client_secret_post client_secret_jwt private_key_jwt self_signed_tls_client_auth tls_client_auth none"`
 	PKCE                   bool
 	PAR                    bool
@@ -455,6 +456,9 @@ func RequestToken(
 
 		if len(cconfig.Audience) > 0 {
 			request.Form.Set("audience", strings.Join(cconfig.Audience, " "))
+		}
+		if len(cconfig.Resource) > 0 {
+			request.Form.Set("resource", strings.Join(cconfig.Resource, " "))
 		}
 	}
 
